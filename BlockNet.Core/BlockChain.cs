@@ -4,7 +4,6 @@ public sealed class BlockChain<T>
 {
     public List<Block<T>>? Chain { get; set; }
     public int Difficulty { get; set; }
-
     public int BlockTimeMs { get; set; }
 
     public BlockChain(int difficulty = 1, int blockTimeMs = 0)
