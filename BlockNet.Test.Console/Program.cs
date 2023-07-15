@@ -9,33 +9,25 @@ GenerateBlockChainWithBlockTime(30000);
 
 void GenerateBlockChainWithoutParameters()
 {
-    var blockChain = new BlockChain<TestTransaction>();
-
-    blockChain.AddBlock(Block<TestTransaction>.Create(new List<TestTransaction>()
-    {
-        new TestTransaction("Bob", "Joe", 100)
-    }));
-    
-    blockChain.AddBlock(Block<TestTransaction>.Create(new List<TestTransaction>()
-    {
-        new TestTransaction("Joe", "Jim", 50)
-    }));
-    
-    blockChain.AddBlock(Block<TestTransaction>.Create(new List<TestTransaction>()
-    {
-        new TestTransaction("Frank", "Joe", 150)
-    }));
-
-    var json = JsonSerializer.Serialize(blockChain);
-
     Console.WriteLine("GenerateBlockChainWithoutParameters:");
-    Console.Write($"Is valid? {blockChain.IsValid()}");
-    Console.WriteLine(json);
+    GenerateBlockChain();
 }
 
 void GenerateBlockChainWithDifficulty(int difficulty)
 {
-    var blockChain = new BlockChain<TestTransaction>(difficulty: difficulty);
+    Console.WriteLine("GenerateBlockChainWithDifficulty:");
+    GenerateBlockChain(difficulty);
+}
+
+void GenerateBlockChainWithBlockTime(int blockTimeMs)
+{
+    Console.WriteLine("GenerateBlockChainWithBlockTime:");
+    GenerateBlockChain(blockTimeMs: blockTimeMs);
+}
+
+void GenerateBlockChain(int difficulty = 1, int blockTimeMs = 0)
+{
+    var blockChain = new BlockChain<TestTransaction>(difficulty, blockTimeMs);
 
     blockChain.AddBlock(Block<TestTransaction>.Create(new List<TestTransaction>()
     {
@@ -54,24 +46,7 @@ void GenerateBlockChainWithDifficulty(int difficulty)
     
     var json = JsonSerializer.Serialize(blockChain);
 
-    Console.WriteLine("GenerateBlockChainWithDifficulty:");
-    Console.Write($"Is valid? {blockChain.IsValid()}");
-    Console.WriteLine(json);
-}
-
-void GenerateBlockChainWithBlockTime(int blockTimeMs)
-{
-    var blockChain = new BlockChain<TestTransaction>(blockTimeMs: blockTimeMs);
-
-    blockChain.AddBlock(Block<TestTransaction>.Create(new List<TestTransaction>()
-    {
-        new TestTransaction("Bob", "Joe", 100)
-    }));
-
-    var json = JsonSerializer.Serialize(blockChain);
-
-    Console.WriteLine("GenerateBlockChainWithBlockTime:");
-    Console.Write($"Is valid? {blockChain.IsValid()}");
+    Console.WriteLine($"Is valid? {blockChain.IsValid()}");
     Console.WriteLine(json);
 }
 
