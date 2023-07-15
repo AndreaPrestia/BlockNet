@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Text.Json;
-using BlockNet.Core.Entities;
+using BlockNet.Core;
 
 GenerateBlockChainWithoutParameters();
 GenerateBlockChainWithDifficulty(5);

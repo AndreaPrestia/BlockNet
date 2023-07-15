@@ -1,4 +1,4 @@
-﻿namespace BlockNet.Core.Entities;
+﻿namespace BlockNet.Core;
 
 public sealed class BlockChain<T>
 {

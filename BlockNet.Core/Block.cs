@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using BlockNet.Core.Helpers;
 
-namespace BlockNet.Core.Entities;
+namespace BlockNet.Core;
 
 public sealed class Block<T>
 {
