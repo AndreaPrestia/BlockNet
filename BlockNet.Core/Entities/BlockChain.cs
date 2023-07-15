@@ -4,7 +4,7 @@ public sealed class BlockChain<T>
 {
     public List<Block<T>>? Chain { get; set; }
     public int Difficulty { get; set; }
-    
+
     public int BlockTimeMs { get; set; }
 
     public BlockChain(int difficulty = 1, int blockTimeMs = 0)
@@ -17,7 +17,7 @@ public sealed class BlockChain<T>
         };
     }
 
-    public Block<T>? GetLastBlock()
+    private Block<T>? GetLastBlock()
     {
         return Chain?.LastOrDefault();
     }
@@ -41,7 +41,6 @@ public sealed class BlockChain<T>
             var currentBlock = Chain?[i];
             var prevBlock = Chain?[i-1];
 
-            // Check validation
             if (currentBlock?.Hash != currentBlock?.GetHash() || prevBlock?.Hash != currentBlock?.PreviousHash) {
                 return false;
             }

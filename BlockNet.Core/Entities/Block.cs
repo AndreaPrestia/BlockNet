@@ -34,7 +34,6 @@ public sealed class Block<T>
     {
         while (!Hash!.StartsWith(string.Concat(Enumerable.Repeat("0", difficulty + 1)))) {
             Nonce++;
-            // Update our new hash with the new nonce value.
             Hash = GetHash();
         }
     }

@@ -5,7 +5,7 @@ namespace BlockNet.Core.Helpers;
 
 internal static class CryptoHelper
 {
-    internal static string? GetSha256(string text)
+    internal static string GetSha256(string text)
     {
         byte[] b = Encoding.Default.GetBytes(text);
 
