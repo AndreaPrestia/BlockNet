@@ -23,7 +23,7 @@ public sealed class Block<T>
         return new Block<T>(transactions);
     }
 
-    public string? GetHash()
+    public string GetHash()
     {
         var jsonData = JsonSerializer.Serialize(Transactions);
 

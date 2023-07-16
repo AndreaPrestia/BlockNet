@@ -7,20 +7,18 @@ internal static class CryptoHelper
 {
     internal static string GetSha256(string text)
     {
-        byte[] b = Encoding.Default.GetBytes(text);
+        var b = Encoding.Default.GetBytes(text);
 
-        using (SHA256 calculator = SHA256.Create())
+        using SHA256 calculator = SHA256.Create();
+        var c = calculator.ComputeHash(b);
+
+        var stringBuilder = new StringBuilder();
+
+        foreach (var t in c)
         {
-            byte[] c = calculator.ComputeHash(b);
-
-            StringBuilder stringBuilder = new StringBuilder();
-
-            for (int i = 0; i < c.Length; i++)
-            {
-                stringBuilder.Append($"{c[i]:X2}");
-            }
-
-            return stringBuilder.ToString();
+            stringBuilder.Append($"{t:X2}");
         }
+
+        return stringBuilder.ToString();
     }
 }
