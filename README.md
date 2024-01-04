@@ -1,5 +1,5 @@
 # BlockNet
-This is a Blockchain example written in .NET. I use it for study purposes :) 
+This is a Blockchain example totally written in .NET. I use it for study purposes :) 
 
 
 **How to use it?**
@@ -11,15 +11,15 @@ There are 3 test methods:
 - GenerateBlockChainWithDifficulty
 - GenerateBlockChainWithBlockTime
 
-The print the results in the application console.
+They print the results in the application console.
 
 ***GenerateBlockChainWithoutParameters***
-It generate a blockchains with a **difficulty** of 1, no blocktime.
+It generates a blockchain with a **difficulty** of 1, no blocktime.
 It's quite fast, it generates a little nonce, i think it can run good on every machine :) 
 
 ***GenerateBlockChainWithDifficulty***
-It generate a blockchains with a **difficulty** of N, no blocktime.
-Now the value set is 5.
+It generates a blockchain with a **difficulty** of N, no blocktime.
+Now the value is set to 5.
 
 ***GenerateBlockChainWithBlockTime***
 It uses the blocktime (in MS) to verify the transaction.
@@ -27,6 +27,6 @@ Now it is set at 30 seconds (30000 ms).
 It is used as in mining for crypto.
 
 **TODO**
-- Write a better code
+- Better code
 - Unit tests containing the valid/invalid demonstration
 
